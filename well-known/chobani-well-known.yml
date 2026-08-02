@@ -1,0 +1,99 @@
+generated: '2026-08-02'
+method: probed
+source: live HTTP probes of every Chobani host discovered in apis.yml
+summary: >-
+  No /.well-known/ discovery documents are published on any Chobani host. All
+  canonical paths return 404 on www.chobani.com, chobani.com and
+  api.chobani.com. shop.chobani.com answers HTTP 200 for every path but serves
+  the same Next.js single-page-app HTML shell, so those 200s are catch-all
+  false positives and were rejected, not recorded as hits.
+hosts:
+  - host: https://www.chobani.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /llms.txt, status: 404}
+  - host: https://chobani.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /llms.txt, status: 404}
+  - host: https://api.chobani.com
+    note: >-
+      Resolves via Azure Front Door (cb-pilotapi.azureedge.net) and answers with
+      an nginx 404 page at the root. No documented public surface.
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+  - host: https://shop.chobani.com
+    note: >-
+      SPA catch-all. Every requested path returns HTTP 200 with the same
+      text/html Next.js shell (the Chobani Oatmilk product page), including
+      /.well-known/agent-card.json, /.well-known/security.txt and /llms.txt.
+      Bodies were fetched and inspected; none parse as JSON or text/plain, so
+      every one is recorded as a rejected false positive.
+    documents:
+      - {path: /.well-known/security.txt, status: 200, verdict: rejected-html-shell}
+      - {path: /.well-known/agent-card.json, status: 200, verdict: rejected-html-shell}
+      - {path: /llms.txt, status: 200, verdict: rejected-html-shell}
+  - host: https://developer.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+  - host: https://developers.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+  - host: https://docs.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+  - host: https://status.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+  - host: https://trust.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+  - host: https://security.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+  - host: https://partners.chobani.com
+    documents:
+      - {path: /, status: dns-nxdomain}
+contract_discovery:
+  ran: '2026-08-02'
+  result: no-public-machine-readable-contract
+  probes:
+    - {kind: openapi, paths: [/openapi.json, /openapi.yaml, /swagger.json, /swagger/v1/swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc, /swagger, /api, /v1], hosts: [www.chobani.com, chobani.com, api.chobani.com], result: all-404}
+    - {kind: graphql, path: /graphql, hosts: [www.chobani.com, chobani.com, api.chobani.com], result: all-404}
+    - {kind: mcp, result: none-found, note: no hosted or remote MCP server is published or referenced by Chobani}
+    - {kind: a2a, paths: [/.well-known/agent-card.json, /.well-known/agent.json], result: none-found, note: only shop.chobani.com returned 200 and the body was an HTML shell, rejected per the AgentCard probe rules}
+  private_surface_observed:
+    note: >-
+      https://www.chobani.com/robots.txt discloses the existence of a first-party
+      /api/v1/* backend that powers chobani.com (contentful, search,
+      recipecontent, product, carts, auth, oauth, searchcategory, wishlist,
+      user, cookbook). Every one of these paths is explicitly Disallow-ed in
+      robots.txt, is undocumented, and carries no published contract. It was NOT
+      probed and is NOT treated as a public API; it is recorded here only as
+      evidence that Chobani's web platform is API-backed internally.
+    source: https://www.chobani.com/robots.txt
+    paths:
+      - /api/v1/contentful/*
+      - /api/v1/search/*
+      - /api/v1/recipecontent/*
+      - /api/v1/product/*
+      - /api/v1/carts/*
+      - /api/v1/auth/*
+      - /api/v1/oauth/*
+      - /api/v1/searchcategory/*
+      - /api/v1/wishlist/*
+      - /api/v1/user/*
+      - /api/v1/cookbook/*

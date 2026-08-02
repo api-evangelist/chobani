@@ -1,0 +1,47 @@
+# Chobani
+
+> Chobani is an American food and beverage company founded in 2005 by Hamdi Ulukaya, best known for popularizing strained Greek yogurt in the United States. Its portfolio spans Greek yogurt, oat milk, plant-based yogurt, probiotic drinks, nutritional shakes, and — following the 2023 acquisition of La Colombe Coffee Roasters — ready-to-drink coffee. Chobani is a privately held consumer packaged goods manufacturer and does NOT operate a public developer program: as of 2026-08-02 it publishes no developer portal, no API documentation, no OpenAPI/AsyncAPI/GraphQL contract, no SDKs, no MCP server and no A2A agent card. Retail and distribution partners integrate through EDI and private supply-chain connections rather than an open API.
+
+## Company
+
+- [Chobani](https://www.chobani.com/): Company website and product catalog.
+- [About Chobani](https://www.chobani.com/about): Company history, mission, and leadership.
+- [Impact](https://www.chobani.com/impact): Chobani's sustainability, community, and social-impact reporting.
+- [Newsroom](https://www.chobani.com/newsroom/our-news): Press releases and company news.
+- [Careers](https://www.chobani.com/careers): Open roles at Chobani.
+- [LinkedIn](https://www.linkedin.com/company/chobani): Chobani's LinkedIn company page.
+
+## Products and channels
+
+- [Yogurt](https://www.chobani.com/products/yogurt): Greek yogurt product lines.
+- [Recipes](https://www.chobani.com/recipes): Consumer recipe library.
+- [Where to Buy](https://www.chobani.com/wheretobuy): Retail store locator.
+- [Shop](https://shop.chobani.com/): Direct-to-consumer online store.
+- [Chobani Cafe](https://www.chobani.com/chobani-cafe): Chobani's retail cafe locations.
+- [Away From Home](https://www.chobani.com/away-from-home): Foodservice and away-from-home channel.
+
+## Support and account
+
+- [Consumer Care](https://chobaniconsumercare.powerappsportals.com/): Chobani's consumer support portal.
+- [Account](https://www.chobani.com/account): Consumer account sign-in and registration.
+
+## Legal
+
+- [Website Terms](https://www.chobani.com/legal/website-terms): Terms governing use of chobani.com.
+- [Privacy Policy](https://www.chobani.com/legal/privacy-policy): Privacy practices and consumer privacy rights.
+- [Accessibility Statement](https://www.chobani.com/legal/accessibility-statement): Website accessibility commitment.
+- [Supplier Code of Conduct](https://www.chobani.com/legal/supplier-code-of-conduct): Requirements for Chobani suppliers.
+- [Human Rights Policy](https://www.chobani.com/legal/human-rights-policy): Chobani's human rights commitments.
+
+## API surface
+
+- No public API. Contract discovery run on 2026-08-02 probed www.chobani.com, chobani.com, api.chobani.com, shop.chobani.com and the developer/docs/status/trust subdomains for OpenAPI, Swagger, GraphQL, MCP, llms.txt, security.txt and A2A agent cards. Every canonical path returned 404 or NXDOMAIN; shop.chobani.com returns HTTP 200 with an HTML single-page-app shell for every path and was rejected as a false positive.
+- api.chobani.com exists behind Azure Front Door but serves an nginx 404 at the root and is undocumented.
+- chobani.com is backed internally by a private, robots.txt-disallowed /api/v1/* surface with no published contract. It is not a public API and was not probed.
+- Trading-partner integration with Chobani is done via EDI, not a public API.
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/chobani/refs/heads/main/apis.yml): APIs.json 0.20 index for Chobani.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/chobani/refs/heads/main/security/chobani-domain-security.yml): Probed TLS, HSTS, DNSSEC, CAA, SPF and DMARC posture.
+- [Well-known discovery record](https://raw.githubusercontent.com/api-evangelist/chobani/refs/heads/main/well-known/chobani-well-known.yml): Full record of every discovery probe and its HTTP status.

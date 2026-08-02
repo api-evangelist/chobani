@@ -1,7 +1,20 @@
 aid: chobani
 name: Chobani
-description: 'Chobani is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Chobani is an American food and beverage company founded in 2005 by Hamdi
+  Ulukaya, best known for popularizing strained Greek yogurt in the United
+  States and for operating what it describes as the world's largest yogurt
+  facility in Twin Falls, Idaho. Its portfolio spans Greek yogurt, oat milk,
+  plant-based yogurt, probiotic drinks, nutritional shakes, and — following the
+  2023 acquisition of La Colombe Coffee Roasters — ready-to-drink coffee.
+  Chobani sells through retail grocery, an away-from-home foodservice channel,
+  Chobani Cafe locations, and a direct-to-consumer shop. Chobani is a privately
+  held consumer packaged goods manufacturer and does not operate a public
+  developer program: it publishes no developer portal, API documentation,
+  machine-readable API contract, SDKs, or public webhook surface, and integrates
+  with retail and distribution partners through EDI and private supply-chain
+  connections rather than an open API.
+image: https://images.ctfassets.net/01to7kbtr3az/26zgkXVraGGMFWvdipov1b/70e0a81fd3db0c02aae0c5765232cda6/Chobani_Press_Logo_MetaData.png
 url: https://raw.githubusercontent.com/api-evangelist/chobani/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -11,13 +24,64 @@ specificationVersion: '0.20'
 created: '2026-08-02'
 modified: '2026-08-02'
 tags:
-- Company
+  - Company
+  - Consumer Goods
+  - CPG
+  - Food Products
+  - Beverages
+  - Dairy
+  - Yogurt
+  - Coffee
+  - Manufacturing
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: No Public API
+  confidence: high
+  source:
+    - https://www.chobani.com/
+  generated: '2026-08-02'
+  method: probed
 apis: []
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
 common:
-- type: Website
-  url: https://www.hiive.com/securities/chobani-stock
+  - type: DomainSecurity
+    url: security/chobani-domain-security.yml
+  - type: Website
+    url: https://www.chobani.com/
+  - type: About
+    url: https://www.chobani.com/about
+  - type: Products
+    url: https://www.chobani.com/products/yogurt
+  - type: Support
+    url: https://chobaniconsumercare.powerappsportals.com/
+  - type: Newsroom
+    url: https://www.chobani.com/newsroom/our-news
+  - type: TermsOfService
+    url: https://www.chobani.com/legal/website-terms
+  - type: PrivacyPolicy
+    url: https://www.chobani.com/legal/privacy-policy
+  - type: Accessibility
+    url: https://www.chobani.com/legal/accessibility-statement
+  - type: Recipes
+    url: https://www.chobani.com/recipes
+  - type: Careers
+    url: https://www.chobani.com/careers
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/chobani
+  - type: LLMsTxt
+    url: llms/chobani-llms.txt
+  - type: Discovery
+    url: well-known/chobani-well-known.yml
+x-enrichment:
+  date: '2026-08-02'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
