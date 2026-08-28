@@ -14,6 +14,17 @@ description: >-
   machine-readable API contract, SDKs, or public webhook surface, and integrates
   with retail and distribution partners through EDI and private supply-chain
   connections rather than an open API.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://images.ctfassets.net/01to7kbtr3az/26zgkXVraGGMFWvdipov1b/70e0a81fd3db0c02aae0c5765232cda6/Chobani_Press_Logo_MetaData.png
 url: https://raw.githubusercontent.com/api-evangelist/chobani/refs/heads/main/apis.yml
 x-type: company
