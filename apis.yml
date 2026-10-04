@@ -37,6 +37,17 @@ modified: '2026-08-02'
 tags:
   - Company
   - Consumer Goods
+  - Consumer Packaged Goods
+  - Food Products
+  - Beverages
+  - Dairy
+  - Yogurt
+  - Coffee
+  - Manufacturing
+  - Food and Beverage
+tags_raw:
+  - Company
+  - Consumer Goods
   - CPG
   - Food Products
   - Beverages
@@ -44,6 +55,7 @@ tags:
   - Yogurt
   - Coffee
   - Manufacturing
+  - Food and Beverage
 accessModel:
   pricing: unknown
   onboarding: unknown
