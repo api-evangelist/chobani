@@ -64,31 +64,82 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Chobani is an American food and beverage company founded in 2005 by Hamdi Ulukaya, best known for popularizing strained Greek yogurt in the United States and for operating what it describes as the world's largest yogurt facility in Twin Falls, Idaho. Its portfolio spans Greek yogurt, oat milk, plant-based yogurt, probiotic drinks, nutritional shakes, and — following the 2023 acquisition of La Colombe Coffee Roasters — ready-to-drink coffee.
+Chobani is an American food and beverage company founded in 2005 by Hamdi Ulukaya, best known for popularizing strained Greek yogurt in the United States and for operating what it describes as the world's largest yogurt facility in Twin Falls, Idaho. Its portfolio spans Greek yogurt, oat milk, plant-based yogurt, probiotic drinks, nutritional shakes, and — following the 2023 acquisition of La Colombe Coffee Roasters — ready-to-drink coffee. Chobani sells through retail grocery, an away-from-home foodservice channel, Chobani Cafe locations, and a direct-to-consumer shop. Chobani is a privately held consumer packaged goods manufacturer and does not operate a public developer program: it publishes no developer portal, API documentation, machine-readable API contract, SDKs, or public webhook surface, and integrates with retail and distribution partners through EDI and private supply-chain connections rather than an open API.
 
-- Website: https://www.chobani.com/
-- About: https://www.chobani.com/about
-- Newsroom: https://www.chobani.com/newsroom/our-news
-- Careers: https://www.chobani.com/careers
-- Consumer Care: https://chobaniconsumercare.powerappsportals.com/
+**Areas:** Company · Consumer Goods · Consumer Packaged Goods · Food Products · Beverages · Dairy · Yogurt · Coffee · Manufacturing · Food and Beverage
 
-## API surface
+## Chobani on APIs.io
 
-**Chobani publishes no public API.** Contract discovery on 2026-08-02 probed `www.chobani.com`, `chobani.com`, `api.chobani.com`, `shop.chobani.com` and the `developer.` / `developers.` / `docs.` / `status.` / `trust.` / `security.` / `partners.` subdomains for OpenAPI, Swagger, GraphQL, MCP, `llms.txt`, `security.txt` and A2A agent cards. Every canonical path returned 404 or NXDOMAIN.
+Everything profiled for Chobani is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/chobani/](https://apis.io/providers/chobani/)** — or go straight to one of the APIs or properties below.
 
-- `api.chobani.com` resolves via Azure Front Door but serves an nginx 404 at the root and is undocumented.
-- `shop.chobani.com` answers HTTP 200 for *every* path with the same Next.js HTML shell — those 200s were fetched, inspected, and rejected as single-page-app catch-all false positives (including `/.well-known/agent-card.json`).
-- `chobani.com/robots.txt` discloses a first-party, `Disallow`-ed `/api/v1/*` backend that powers the website. It is undocumented, carries no published contract, and was not probed. It is not a public API.
-- Trading-partner integration with Chobani runs over EDI, not an open API.
+### Published properties
 
-Full probe record with HTTP statuses: [`well-known/chobani-well-known.yml`](well-known/chobani-well-known.yml).
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Artifacts
+#### Security (1)
 
-| Artifact | File | Method |
-|---|---|---|
-| Discovery record | `well-known/chobani-well-known.yml` | probed |
-| Domain security | `security/chobani-domain-security.yml` | probed |
-| llms.txt | `llms/chobani-llms.txt` | generated |
+Authentication, trust centre, and vulnerability disclosure.
 
-Source: harvest backlog, secondary-market listing — https://www.hiive.com/securities/chobani-stock
+- [Chobani Domain Security](https://apis.io/security/chobani/chobani-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.chobani.com/)
+- [Support](https://chobaniconsumercare.powerappsportals.com/)
+- [Terms of service](https://www.chobani.com/legal/website-terms)
+- [Privacy policy](https://www.chobani.com/legal/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 10.6** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/chobani/](https://apis.io/providers/chobani/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Chobani: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/chobani/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
